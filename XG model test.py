@@ -92,7 +92,6 @@ shots = shots[shots['Distance'] <= 50]
 goals = shots[shots['Goal'] == 1]
 
 from mplsoccer import Pitch
-import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 
 # Define shots and goals that are headers
@@ -149,10 +148,6 @@ cb2 = fig.colorbar(hb_goals, ax=axs[1], format=formatter)
 cb2.set_label('Goal Frequency')
 
 plt.show()
-
-
-
-import numpy as np
 
 # Define a function for creating probability plots
 def create_prob_plot(ax, shots, goals, title):
@@ -245,7 +240,6 @@ plt.show()
 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-import statsmodels.api as sm
 
 # Convert 'Goal' column to integer type
 shots['Goal'] = shots['Goal'].astype(int)
@@ -330,12 +324,6 @@ axs[1].set_ylabel("Goal")
 axs[1].legend()
 
 plt.show()
-
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import statsmodels.api as sm
-import statsmodels.formula.api as smf
 
 # Create 100 random samples
 samples = shots.sample(n=100)
@@ -431,7 +419,6 @@ print(f"Model 2 Accuracy: {accuracy_score(y_test, y_pred2)}")
 print(f"Model 2 Log Loss: {log_loss(y_test, y_pred_proba2)}")
 print(f"Model 2 AUC: {roc_auc_score(y_test, y_pred_proba2)}")
 
-import matplotlib.pyplot as plt
 from mplsoccer import Pitch
 
 # Randomly sample 50 shots
@@ -568,8 +555,6 @@ model.fit(X_train, y_train)
 y_pred_new = model.predict(X_test)
 y_pred_proba_new = model.predict_proba(X_test)[:, 1]
 
-import statsmodels.api as sm
-
 # Fit the logistic regression model with statsmodels
 logit_model = sm.Logit(y_train, sm.add_constant(X_train))
 result = logit_model.fit()
@@ -652,8 +637,6 @@ print("Predicted probabilities for custom data:")
 print(custom_pred_proba)
 
 # ... (remaining code)
-import numpy as np
-import pandas as pd
 
 # Randomly sample 50 points from the testing dataset
 random_indices = np.random.choice(X_test.index, size=50, replace=False)
@@ -682,7 +665,6 @@ print(top_10_shots)
 
 # Rest of the code remains the same...
 
-import numpy as np
 from matplotlib import colors
 
 # Define a function for creating probability plots using the model
@@ -740,9 +722,6 @@ plt.show()
 from sklearn.model_selection import cross_val_score, train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, log_loss, roc_auc_score
-import numpy as np
-import statsmodels.api as sm
-import matplotlib.pyplot as plt
 from mplsoccer import Pitch, VerticalPitch
 
 # Convert 'header' column to integers
